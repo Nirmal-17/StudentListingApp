@@ -1,0 +1,17 @@
+﻿@model IEnumerable<cruddotnet9.Models.Student>
+<h2>Students</h2>
+<a asp-action="Create">Add New</a>
+<table>
+    <tr><th>Name</th><th>Email</th><th>Age</th><th>Actions</th></tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.Name</td>
+            <td>@s.Age</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@s.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@s.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

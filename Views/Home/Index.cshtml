@@ -1,0 +1,45 @@
+﻿@model IEnumerable<cruddotnet9.Models.Student>
+
+@{
+    ViewData["Title"] = "Student List";
+}
+
+<h2 class="mb-3">Student List</h2>
+
+    </tbody>
+
+</table>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Address</td>
+                    <td>@item.Age</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4" rowspan="4" class="text-center">
+                    No students found.
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
